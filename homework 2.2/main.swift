@@ -1,8 +1,12 @@
-var appertment = Appartement(typeOfMaterial: "Brick", dlina: 5.60, shirina: 3.20, roomsAmount: 1)
-appertment.showInfo()
-
-var office = Office(typeOfMaterial: "Concrete", dlina: 60.20, shirina: 35.50, floors: 8)
+var flat = Appartment(typeOfMaterial: "Beton", dlina: 18.20, shirina: 8.10, roomsAmount: 3, theBedsAmount: 2)
+flat.showInfo()
+var office = Office(typeOfMaterial: "Steklo", dlina: 10.10, shirina: 4.40, roomsAmount: 4, theDesksAmount: 4)
 office.showInfo()
 
-var building = Building(theAppartments: 170, theOffices: 50, theTypeOfMaterial: "Concrete", theDlina: 45.50, theShirina: 27.30, theRoomsAmount: 1000, theFloorsAmount: 19)
-building.countAppartmentsAndOffices()
+var allPlacements: [Placement] = [flat, office]
+
+var building = Building()
+building.count(placement: flat)
+building.count(placement: office)
+
+building.amount()
